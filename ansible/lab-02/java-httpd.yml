@@ -1,17 +1,21 @@
 ---
-- hosts: webservers  # Host or Group of Selections
+- hosts: web # Host or Group of Selections
   become: true
   vars:
     httpd_port: 8080
   tasks:
+  - name: copy
+    copy: 
+      src: ~/cloudready/devopstraining/ansible/roles/apache2/files/httpd.conf
+      dest: /etc/httpd/conf/httpd.conf
   - name: Install httpd # Naming the task for debug purpose
-    yum: name=http state=present  # Using module ( doing the task )
+    yum: name=httpd state=present  # Using module ( doing the task )
   - name: Start httpd
     service: name=httpd state=started enabled=yes
 
 
-- hosts: appserver
+- hosts: db
   become: true
   tasks:
-  - name: Install default-jdk
-    yum: name=java-1.8.0-openjdk state=present
+  - name: Install mysql
+    yum: name=mysql state=present

@@ -19,3 +19,5 @@ ansible -m service -a "name=nginx state=started enabled=yes" ansible-node --beco
 ansible -m file -a "path=/home/ec2-user/usingAnsible state=directory" ansible-node --become
 ansible -m copy -a "src=Vagrantfile dest=/tmp" ansible-node --become
 
+
+ansible web -b -m copy -a "src=roles/apache2/files/httpd.conf dst=/etc/httpd/conf/httpd.conf"
