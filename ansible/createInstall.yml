@@ -14,6 +14,7 @@
         instance_type: t2.micro
         image: ami-04681a1dbd79675a5
         exact_count: 3
+        assign_public_ip: yes
         count_tag:
           Name: autospin
         instance_tags:
