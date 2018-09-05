@@ -25,24 +25,11 @@
         timeout: 320
       with_items: "{{ ec2.instances }}"
 
-    # - ec2_instance_facts:
-    #     region: us-east-1
-    #     filters:
-    #       instance-state-name: running
-    #       "tag:Name": autospin
-    #   register: ec2facts
-    # - debug:
-    #     var: ec2facts
     - name: create hostlist
       add_host:
         hostname: "{{ item.private_ip }}"
         groupname: launched
       with_items: "{{ ec2.instances }}"
-    
-    # - debug:
-    #     msg: "{{ item }}"
-    #   with_inventory_hostnames:
-    #     - all: launched
 
 - name: install
   hosts: launched
