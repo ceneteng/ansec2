@@ -1,0 +1,11 @@
+- name: terminate
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: terminate instance
+      ec2:
+        region: us-east-1
+        instance_tags:
+          Name: autospin
+      state: stopped
