@@ -8,7 +8,7 @@
 
     - name: provision instances
       ec2:
-        key_name: Mac
+        key_name: devbox
         group: launch-wizard-4
         region: us-east-1
         instance_type: t2.micro
