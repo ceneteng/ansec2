@@ -8,4 +8,4 @@
         region: us-east-1
         instance_tags:
           Name: autospin
-        state: stopped
+        state: terminated
