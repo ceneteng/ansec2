@@ -1,2 +1,7 @@
 [local]
 localhost
+
+[webservers]
+ec2-34-207-136-94.compute-1.amazonaws.com
+ec2-54-211-101-152.compute-1.amazonaws.com
+ec2-18-212-139-186.compute-1.amazonaws.com
