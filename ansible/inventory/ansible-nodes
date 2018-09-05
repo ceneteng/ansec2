@@ -2,6 +2,6 @@
 localhost
 
 [webservers]
-ec2-34-207-136-94.compute-1.amazonaws.com
-ec2-54-211-101-152.compute-1.amazonaws.com
-ec2-18-212-139-186.compute-1.amazonaws.com
+ip-172-31-43-18.ec2.internal
+ip-172-31-34-195.ec2.internal
+ip-172-31-34-151.ec2.internal
