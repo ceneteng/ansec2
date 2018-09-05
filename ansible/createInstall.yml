@@ -19,7 +19,6 @@
         instance_tags:
           Name: autospin
       register: ec2
-get
     - name: wait for instances
       local_action: wait_for
                     host={{ item.public_ip }}
