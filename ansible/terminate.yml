@@ -9,7 +9,7 @@
           "tag:Name": autospin
       register: ec2
     - debug:
-        msg: "{{ item.value['instance_id'] }}"
+        msg: "{{ (ec2.stdout | from_json).instances.instance_id }}"
         
     # - ec2:
     #     state: 'absent'
