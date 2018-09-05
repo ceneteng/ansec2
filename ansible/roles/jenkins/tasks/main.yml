@@ -1,8 +1,7 @@
 tasks:
-  - name: rpm key 
-      rpm_key:
-        state: present
-        key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+  - rpm_key:
+      state: present
+      key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
   - name: wget
       get_url:
