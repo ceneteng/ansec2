@@ -24,14 +24,16 @@
         minutes: 1
 
     - name: create hostlist
-      set_fact:
-        ec2_instances: "{{ hostlist }} + [ '{{ item.public_ip }}' ]"
+      add_host:
+        hostname: "{{ item.public_ip }}"
+        groupname: launched
       with_items: "{{ ec2.tagged_instances }}"
     # - debug:
     #     var: ec2
 
 - name: install
-  hosts: hostlist
+  hosts: launched
+  become: True
   tasks:
     - name: install apache
       yum:
