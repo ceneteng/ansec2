@@ -3,10 +3,9 @@ tasks:
       state: present
       key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
-  - name: wget
-      get_url:
-        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
-        dest: /etc/yum.repos.d/jenkins.repo
+  - get_url:
+      url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+      dest: /etc/yum.repos.d/jenkins.repo
 
   - name: update yum
       shell: sudo yum repolist
