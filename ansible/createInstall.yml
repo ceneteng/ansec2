@@ -31,10 +31,12 @@
         ec2_instances: "{{ hostlist }} + [ '{{ item.public_ip_address }}' ]"
       with_items: "{{ ec2.instances }}"
 
-- name: install apache
+- name: install
   hosts: hostlist
-    yum:
-      name: httpd
-      state: present
+  tasks:
+    - name: install apache
+      yum:
+        name: httpd
+        state: present
 
         
