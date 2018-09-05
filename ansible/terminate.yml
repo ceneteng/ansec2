@@ -9,7 +9,7 @@
           "tag:Name": autospin
       register: ec2
     - debug:
-        msg: "Id is {{ instance_id }}"
+        msg: "Id is {{ ec2.instance_id }}"
     # - ec2:
     #     state: 'absent'
     #     instance_ids: '{{ ec2.instance_ids }}'
