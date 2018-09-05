@@ -25,6 +25,7 @@
     - ec2_instance_facts:
         region: us-east-1
         filters:
+          instance-state-name: running
           "tag:Name": autospin
       register: ec2facts
     - debug:
