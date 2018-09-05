@@ -1,0 +1,24 @@
+- name: install
+  hosts: webserver
+  become: True
+  tasks:
+    - name: rpm key 
+        rpm_key:
+          state: present
+          key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+    - name: wget
+        get_url:
+          url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+          dest: /etc/yum.repos.d/jenkins.repo
+
+    - name: update yum
+        shell: sudo yum repolist
+    
+    - name: install jenkins
+        yum:
+          name: "{{ item }}"
+          state: present
+        with_items:
+          - java-1.8.0-openjdk
+          - jenkins
