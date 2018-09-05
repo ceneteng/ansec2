@@ -8,8 +8,8 @@
         filters:
           "tag:Name": autospin
       register: ec2
-    # - debug:
-    #     var: result[instance_id]
-    - ec2:
-        state: 'absent'
-        instance_ids: '{{ ec2.instance_ids }}'
+    - debug:
+        msg: "Id is {{ instance_id }}"
+    # - ec2:
+    #     state: 'absent'
+    #     instance_ids: '{{ ec2.instance_ids }}'
