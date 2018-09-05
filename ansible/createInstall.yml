@@ -29,7 +29,7 @@
       register: ec2facts
     - name: create hostlist
       add_host:
-        hostname: "{{ item.private_ip }}"
+        hostname: "{{ item.private_dns_name }}"
         groupname: launched
       with_items: "{{ ec2facts.instances }}"
     
