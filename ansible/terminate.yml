@@ -3,9 +3,17 @@
   connection: local
   gather_facts: false
   tasks:
-    - local_action:
-        module: ec2
+    # - local_action:
+    #     module: ec2
+    #     region: us-east-1
+    #     instance_tags:
+    #       Name: autospin
+    #     state: stopped
+    
+    - ec2_instance_facts:
         region: us-east-1
-        instance_tags:
-          Name: autospin
-        state: absent
+        filters:
+          "tag:Name": autospin
+      register: result
+    - debug:
+        var: result
