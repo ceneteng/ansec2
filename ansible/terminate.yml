@@ -7,14 +7,9 @@
         region: us-east-1
         filters:
           "tag:Name": autospin
-      register: result
-    - debug:
-        var: result[instance_id]
-    # - local_action:
-    #     module: ec2
-    #     region: us-east-1
-    #     instance_tags:
-    #       Name: autospin
-    #     state: stopped
-    
-
+      register: ec2
+    # - debug:
+    #     var: result[instance_id]
+    - ec2:
+        state: 'absent'
+        instance_ids: '{{ ec2.instance_ids }}'
