@@ -27,6 +27,8 @@
         filters:
           "tag:Name": autospin
       register: ec2facts
+    - debug:
+        var: ec2facts
     - name: create hostlist
       add_host:
         hostname: "{{ item.private_dns_name }}"
