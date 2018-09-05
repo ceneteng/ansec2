@@ -11,7 +11,7 @@
     - debug:
         msg: "{{ (ec2.stdout | from_json).instances.instance_id }}"
         
-    # - ec2:
-    #     state: 'absent'
-    #     instance_ids: '{{ ec2.instances.instance_id[0] }}'
-    #   with_items: ec2
+    - ec2:
+        state: 'absent'
+        instance_ids: '{{ ec2.instance_id }}'
+      with_items: ec2
