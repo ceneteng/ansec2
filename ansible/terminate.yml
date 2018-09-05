@@ -3,7 +3,8 @@
   connection: local
   gather_facts: False
 
-  vars: ec2_instances[]
+  vars: 
+    ec2_instances: []
   tasks:
     - ec2_instance_facts:
         region: us-east-1
