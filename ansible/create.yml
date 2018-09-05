@@ -6,8 +6,6 @@
 
     - name: provision instances
       ec2:
-        aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
-        aws_secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
         key_name: Mac
         group: launch-wizard-4
         region: us-east-1
