@@ -6,7 +6,7 @@
     hostlist: []
   tasks:
 
-    - name: provision instances
+   # - name: provision instances
     #   ec2:
     #     key_name: devbox
     #     group: launch-wizard-4
