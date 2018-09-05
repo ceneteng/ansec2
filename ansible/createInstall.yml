@@ -15,7 +15,8 @@
           Name: autospin
         instance_tags:
           Name: autospin
-        user_data: "sudo yum install apache2 -y"
+          Type: Redhat
+        user_data: "sudo yum install httpd -y"
         
     - name: provision instances UBU
       ec2:
@@ -28,4 +29,5 @@
           Name: autospin
         instance_tags:
           Name: autospin
-        user_data: "sudo apt-get install apache2 --assume-yes"
+          Type: Ubuntu
+        user_data: "sudo apt-get install httpd --assume-yes"
