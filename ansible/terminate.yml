@@ -3,8 +3,8 @@
   connection: local
   gather_facts: false
   tasks:
-    - name: terminate instance
-      ec2:
+    - local_action:
+      module: ec2
         region: us-east-1
         instance_tags:
           Name: autospin
