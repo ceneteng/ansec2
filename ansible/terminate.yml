@@ -4,8 +4,8 @@
   gather_facts: false
   tasks:
     - local_action:
-      module: ec2
+        module: ec2
         region: us-east-1
         instance_tags:
           Name: autospin
-      state: stopped
+        state: stopped
