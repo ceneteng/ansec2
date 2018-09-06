@@ -24,6 +24,6 @@
     src: tomcat.sh
     dest: tomcat.sh
 
-- name: execute install script
-  command: sh /home/ubuntu/tomcat.sh
+# - name: execute install script
+#   command: sh /home/ubuntu/tomcat.sh
 
