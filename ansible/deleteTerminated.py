@@ -10,10 +10,10 @@ invnew =[]
 
 invfile.seek(0)
 for item in regions:
-        ec2 = boto3.resource('ec2',region_name=item)
-        print("Listing instances in " + item)
-        instances = ec2.instances.filter(Filters=[{'Name': 'instance-state-name', 'Values': ['terminated']}])
-
+    ec2 = boto3.resource('ec2',region_name=item)
+    print("Listing instances in " + item)
+    instances = ec2.instances.filter(Filters=[{'Name': 'instance-state-name', 'Values': ['terminated']}])
+    for instance in instances:
         for line in invcur:
             if instance.id not in line:
                 invfile.write(line)
