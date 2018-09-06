@@ -10,7 +10,7 @@
         group: launch-wizard-4
         region: us-east-1
         instance_type: t2.micro
-        image: ami-04169656fea786776
+        image: ami-0c54494f920b19106
         #exact_count: 1
         count_tag:
           Name: autospin
