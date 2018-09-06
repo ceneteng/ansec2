@@ -1,5 +1,5 @@
 - apt:
-    name: default-jdk systemd
+    name: default-jdk
     update_cache: yes
 
 - apt:
