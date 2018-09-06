@@ -11,7 +11,7 @@
         region: us-east-1
         instance_type: t2.micro
         image: ami-04681a1dbd79675a5
-        exact_count: 6
+        exact_count: 3
         count_tag:
           Name: autospin
         instance_tags:
