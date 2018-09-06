@@ -14,7 +14,6 @@ for item in regions:
         for instance in instances:
 
            # print("\n")
-            print(instance.id, instance.private_dns_name)
             for tag in instance.tags:
                 for key in tag:
                     if tag[key] == "autospin":
