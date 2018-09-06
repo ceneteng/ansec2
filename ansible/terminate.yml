@@ -10,7 +10,7 @@
         region: us-east-1
         filters:
           "tag:Name": autospin
-          "instance-state-name: running"
+          instance-state-name: running
       register: ec2_autospin
 
     - name: list of instances
