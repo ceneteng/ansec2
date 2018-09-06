@@ -6,8 +6,8 @@ regions = ['us-east-1']
 
 invfile = open("inventory/ansible-nodes", "r+")
 invcur = invfile.readlines()
-invnew = ()
-terminated = ()
+invnew = []
+terminated = []
 
 invfile.seek(0)
 for item in regions:
