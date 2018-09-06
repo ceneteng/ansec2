@@ -17,8 +17,11 @@ for item in regions:
     for instance in instances:
         terminated.append(instance.id)
 
-if any(s not in invcur for s in terminated):
-    invfile.write(s)
+for line in invcur:
+    if any(s in line for s in terminated):
+        continue
+    else:
+        invfile.write(line)
 
 
 invfile.truncate()
