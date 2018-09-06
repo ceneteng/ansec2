@@ -15,8 +15,9 @@ for item in regions:
 
            # print("\n")
             print(instance.id, instance.private_dns_name)
-            if instance.tags["Name"] == "autospin":
-                running[instance.id] = instance.private_dns_name
+            for tag in instance.tags:
+                if "autospin" in tag["Name"]:
+                    running[instance.id] = instance.private_dns_name
 #    instance.stop()
 
 print running
