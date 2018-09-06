@@ -20,5 +20,5 @@
     dest: /tmp/apache-tomcat-8.5.33.tar.gz
 
 - name: execute install script
-  shell: bash ../files/tomcat.sh
+  shell: tomcat.sh
 
