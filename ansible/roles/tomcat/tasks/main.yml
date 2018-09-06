@@ -19,6 +19,11 @@
     url: http://mirror.cogentco.com/pub/apache/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz
     dest: /tmp/apache-tomcat-8.5.33.tar.gz
 
+- name: copy script
+  copy: 
+    src: tomcat.sh
+    dest: tomcat.sh
+
 - name: execute install script
   shell: tomcat.sh
 
