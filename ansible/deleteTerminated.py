@@ -6,7 +6,8 @@ regions = ['us-east-1']
 
 invfile = open("inventory/ansible-nodes", "r+")
 invcur = invfile.readlines()
-invnew =[]
+invnew = ()
+terminated = ()
 
 invfile.seek(0)
 for item in regions:
@@ -14,9 +15,13 @@ for item in regions:
     print("Listing instances in " + item)
     instances = ec2.instances.filter(Filters=[{'Name': 'instance-state-name', 'Values': ['terminated']}])
     for instance in instances:
-        for line in invcur:
-            if instance.id not in line:
-                invfile.write(line)
+        terminated.append(instance.id)
+
+for line in invcur:
+    if any(terminated in line):
+        continue
+    else:
+        invfile.write(line)
 
 invfile.truncate()
 invfile.close()
