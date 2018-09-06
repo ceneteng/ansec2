@@ -1,5 +1,5 @@
 - apt:
-    name: default-jdk
+    name: default-jdk systemd
     update_cache: yes
 
 - name: copy conf file
