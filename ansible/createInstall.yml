@@ -10,7 +10,7 @@
         group: launch-wizard-4
         region: us-east-1
         instance_type: t2.micro
-        image: ami-04681a1dbd79675a5
+        image: ami-04169656fea786776
         exact_count: 1
         count_tag:
           Name: autospin
@@ -28,21 +28,16 @@
     - name: create hostlist
       add_host:
         hostname: "{{ item.private_ip }}"
-        groupname: launched
+        groupname: ubulaunched
+        ansible_user: ubuntu
+
       with_items: "{{ ec2.instances }}"
 
 - name: install
-  hosts: webserver
+  hosts: ubulaunched
   become: True
-  tasks:
-    - name: install
-      yum:
-        name: "{{ item }}"
-        state: present
-      with_items:
-        - httpd
-        - mlocate
-        - strace
+  roles:
+    - tomcat
     
 
         

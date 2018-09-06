@@ -1,0 +1,24 @@
+- apt:
+    name: default.jdk
+    update_cache: yes
+
+- name: copy conf file
+  copy:
+    src: tomcat.service
+    dest: /etc/systemd/system/tomcat.service
+
+
+- name: add tomcat group
+  shell: groupadd tomcat
+
+- name: add user
+  shell: useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+
+- name: download requirements
+  get_url:
+    url: http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
+    dest: /tmp/apache-tomcat-8.5.5.tar.gz
+
+- name: execute install script
+  shell: bash tomcat.sh
+
