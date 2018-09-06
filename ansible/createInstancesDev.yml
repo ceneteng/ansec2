@@ -17,4 +17,8 @@
         instance_tags:
           Name: autospin
       register: ec2
+    
+    - name: add to inventory
+      command: makeinv.py
+      
         
