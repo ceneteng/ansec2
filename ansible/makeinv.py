@@ -23,5 +23,5 @@ print running
 
 invfile=open("inventory/ansible-nodes", "a")
 
-for key, value in running:
-    invfile.write("%s ansible_host=%s" % key, value)
+for key in running:
+    invfile.write("%s ansible_host=%s" % key, running[key])
