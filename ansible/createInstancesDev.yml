@@ -19,6 +19,6 @@
       register: ec2
     
     - name: add to inventory
-      command: makeinv.py
-      
+      script: makeinv.py
+
         
