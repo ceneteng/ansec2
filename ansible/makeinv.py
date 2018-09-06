@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import boto3
+import json
 
 regions = ['us-east-1']
 
@@ -19,3 +20,8 @@ for item in regions:
 #    instance.stop()
 
 print running
+
+invfile=open("inventory/ansible-nodes", "a")
+
+for key, value in running:
+    invfile.write("%s ansible_host=%s" % key, value)
