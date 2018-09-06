@@ -17,13 +17,11 @@ for item in regions:
             for tag in instance.tags:
                 for key in tag:
                     if tag[key] == "autospin":
-                        print "autospin"
-                    #running[instance.id] = instance.private_dns_name
-#    instance.stop()
+                        running[instance.id] = instance.private_dns_name
 
-# print running
+print running
 
-# invfile=open("inventory/ansible-nodes", "a")
+invfile=open("inventory/ansible-nodes", "a")
 
-# for key in running:
-#     invfile.writelines("%s ansible_host=%s\n" % (key, running[key]))
+for key in running:
+    invfile.writelines("%s ansible_host=%s\n" % (key, running[key]))
