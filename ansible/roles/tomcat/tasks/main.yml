@@ -16,8 +16,8 @@
 
 - name: download requirements
   get_url:
-    url: http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
-    dest: /tmp/apache-tomcat-8.5.5.tar.gz
+    url: http://mirror.cogentco.com/pub/apache/tomcat/tomcat-8/v8.5.33/bin/apache-tomcat-8.5.33.tar.gz
+    dest: /tmp/apache-tomcat-8.5.33.tar.gz
 
 - name: execute install script
   shell: bash tomcat.sh
