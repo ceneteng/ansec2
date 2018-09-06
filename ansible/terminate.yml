@@ -25,3 +25,9 @@
         region: us-east-1
         state: 'absent'
         instance_ids: '{{ ec2_instances }}'
+
+    - pause:
+        minutes: 1
+    
+    - name: remove from inventory
+      script: deleteTerminated.py
