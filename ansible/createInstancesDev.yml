@@ -16,7 +16,6 @@
           Name: autospin
         instance_tags:
           Name: autospin
-          Ref: gravy
       register: ec2
     
     - name: Wait for SSH to come up
