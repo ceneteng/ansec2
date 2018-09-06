@@ -10,6 +10,7 @@
         region: us-east-1
         filters:
           "tag:Name": autospin
+          "tag:Ref": gravy
           instance-state-name: running
       register: ec2_autospin
 
