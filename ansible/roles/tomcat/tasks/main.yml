@@ -25,5 +25,5 @@
     dest: tomcat.sh
 
 - name: execute install script
-  shell: tomcat.sh
+  command: sh ~/tomcat.sh
 
